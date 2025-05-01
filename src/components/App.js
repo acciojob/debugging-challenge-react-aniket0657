@@ -1,17 +1,23 @@
-import React, { useEffect, useState } from "react";
-import '../styles/App.css';
+import React from "react";
 
-const App = () => {
-
-  let [count, setCount] = useState(0)
+function App() {
+  const handleClick = () => {
+    alert("Button clicked!");
+  };
 
   return (
-    <div class="ball">
-      <h1 class="count" ondoubleclick={() => { alert("cant edit it") }}>{count}</h1>
-      <button class='increment-button' onclick={() => { setCount(count + 1) }}>Increment</button>
+    <div className="container">
+      <h1>Welcome to the JSX Fix Challenge</h1>
+      <label htmlFor="nameInput">Name:</label>
+      <input id="nameInput" type="text" />
+      <button onClick={handleClick} disabled={false}>
+        Click Me
+      </button>
+      <div style={{ backgroundColor: "lightblue", padding: "10px" }}>
+        Styled Div
+      </div>
     </div>
-  )
+  );
 }
-
 
 export default App;
